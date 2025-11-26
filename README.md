@@ -1,15 +1,9 @@
-# Real-Time Chat Application with Socket.io
+# Real-Time Chat App (Week 5 — Socket.io)
 
-This assignment focuses on building a real-time chat application using Socket.io, implementing bidirectional communication between clients and server.
+## Overview
+This is a real-time chat application built with **Node.js, Express, Socket.io, MongoDB, and React**.  
+It demonstrates bidirectional communication between clients and server with live messaging, online status, typing indicators, and notifications.
 
-## Assignment Overview
-
-You will build a chat application with the following features:
-1. Real-time messaging using Socket.io
-2. User authentication and presence
-3. Multiple chat rooms or private messaging
-4. Real-time notifications
-5. Advanced features like typing indicators and read receipts
 
 ## Project Structure
 
@@ -35,21 +29,24 @@ socketio-chat/
 │   └── package.json        # Server dependencies
 └── README.md               # Project documentation
 ```
+## Features Implemented
 
-## Getting Started
+### Core Features
+- ✅ User Authentication (simple username-based login with JWT)  
+- ✅ Global Chat Room (all users can send/receive messages)  
+- ✅ Display Messages (sender name + timestamp)  
+- ✅ Typing Indicator  
+- ✅ Online/Offline Status  
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week5-Assignment.md` file
-4. Complete the tasks outlined in the assignment
-
-## Files Included
-
-- `Week5-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Socket.io configuration templates
-  - Sample components for the chat interface
+### Advanced Features
+- ✅ Private Messaging (direct messages between users)  
+- ✅ Multiple Chat Rooms / Channels  
+- ✅ Message Delivery Acknowledgment  
+- ✅ Read Receipts (`readBy` tracking)  
+- ✅ Message Reactions  
+- ✅ Browser Notifications for new messages  
+- ✅ Typing Notifications per room
+- 
 
 ## Requirements
 
@@ -58,16 +55,46 @@ socketio-chat/
 - Modern web browser
 - Basic understanding of React and Express
 
-## Submission
+  
+## Setup Instructions
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+### 1. Clone Repository
+```bash
+git clone <your-repo-url>
+```
 
-1. Complete both the client and server portions of the application
-2. Implement the core chat functionality
-3. Add at least 3 advanced features
-4. Document your setup process and features in the README.md
-5. Include screenshots or GIFs of your working application
-6. Optional: Deploy your application and add the URLs to your README.md
+### 2. Backend Setup
+```bash
+cd server
+npm install
+cp .env.example .env
+# Edit .env and set MONGO_URL and JWT_SECRET
+npm run dev
+```
+
+### 3. Frontend Setup
+```bash
+cd client
+npm install
+# If using local server:
+npm run dev
+# Visit http://localhost:5173 (Vite default port)
+```
+
+##### 4. Testing Real-Time Features
+- Open multiple browser tabs or devices  
+- Login with different usernames  
+- Send messages, check typing indicator, online/offline status  
+- Observe private messages (if implemented)  
+- Browser notifications appear when receiving new messages
+
+  
+## Deployment Notes
+- Backend: Render, Railway, or Heroku  
+- Frontend: Vercel, Netlify, or GitHub Pages  
+- Ensure environment variables (`MONGO_URL`, `JWT_SECRET`) are correctly set  
+- Update `REACT_APP_SERVER_URL` for production in frontend  
+
 
 ## Resources
 
